@@ -1,0 +1,882 @@
+body {
+  width: 100%;
+  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.item {
+  display: inline-block;
+  color: #fff;
+}
+.title {
+  color: #fff;
+  margin-left: 30px;
+  margin-top: 45px;
+  text-transform: uppercase;
+}
+.img {
+  height: 350px;
+  width: 300px;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  margin-left: 6px;
+}
+.item-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  margin-top: 15px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container {
+  position: relative;
+  width: 95%;
+  height: 450px;
+  padding: 20px 0;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.slider img {
+  max-width: 60%;
+  min-width: 55%;
+  min-height: 605px;
+  max-height: 605px;
+  display: block;
+  margin-left: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider-content {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, #030b17 86%, #0c111b00);
+  color: #fff;
+  overflow: hidden;
+}
+.movie-title {
+  padding: 50px;
+  margin-top: 60px;
+  text-transform: uppercase;
+  color: rgb(111, 200, 235);
+  opacity: 0.9;
+}
+.movie-des {
+  width: 70%;
+  line-height: 25px;
+  padding-left: 50px;
+  opacity: 0.3;
+}
+
+@media screen and (max-width: 658px) {
+  .eptitle {
+    font-size: 28px;
+    margin-top: 50px;
+    margin-left: -50px;
+    max-width: 375px;
+    color: #332222;
+  }
+  .carousel-container {
+    width: 95%;
+    height: 450px;
+  }
+  .slider-content {
+    width: 1px;
+    height: 300px;
+    z-index: 2;
+    background: linear-gradient(to right, #030b17 86%, #0c111b00);
+    color: #fff;
+    overflow: hidden;
+  }
+  .slider img {
+    min-width: 97%;
+    min-height: 380px;
+    max-height: 270px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .MainContainer {
+    position: relative;
+    bottom: 7vh;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px;
+  }
+  .img {
+    height: 200px;
+    width: 130px;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    margin-left: 6px;
+  }
+  .title {
+    color: #fff;
+    margin-left: 5px;
+    margin-top: 30px;
+  }
+  .item-container {
+    margin-left: -10px;
+  }
+  .mainBut {
+    height: 105%;
+    margin-left: 10%;
+    position: relative;
+    bottom: 25px;
+  }
+}
+
+/*-----css movie site -----*/
+
+header {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 550px;
+  position: relative;
+  padding-top: 80px;
+}
+
+header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 0 80px #000;
+}
+
+header nav {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+header nav .fa {
+  cursor: pointer;
+  display: none;
+}
+
+header nav .fa:hover {
+  color: #db0000;
+}
+
+.nav {
+  background: #fff;
+  color: #000;
+  transition: background 0.5s;
+}
+
+.navBlack {
+  background: #000;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+header nav .logo {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+header nav .logo span {
+  color: #db0000;
+}
+
+header nav ul .marker {
+  background: #db0000;
+  width: 40px;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  border-radius: 20px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  list-style: none;
+  position: relative;
+}
+
+header nav ul li {
+  cursor: pointer;
+}
+
+header nav ul li span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+header nav ul li img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header .popular-movie-slider {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 10px 100px;
+  position: relative;
+}
+
+header .popular-movie-slider .poster {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+header .popular-movie-slider .popular-movie-slider-content {
+  line-height: 25px;
+}
+
+header .popular-movie-slider .popular-movie-slider-content .movie-name {
+  font-size: 1.8em;
+}
+
+header .popular-movie-slider .popular-movie-slider-content .category {
+  display: flex;
+  gap: 30px;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+
+header .popular-movie-slider .popular-movie-slider-content .desc {
+  font-size: 0.9em;
+  max-width: 750px;
+}
+
+header .popular-movie-slider .popular-movie-slider-content .movie-info {
+  display: flex;
+  gap: 30px;
+  margin: 25px 0;
+}
+
+header
+  .popular-movie-slider
+  .popular-movie-slider-content
+  .movie-info
+  .fa-circle {
+  color: #db0000;
+  font-size: 0.85em;
+}
+
+header
+  .popular-movie-slider
+  .popular-movie-slider-content
+  .movie-info
+  .fa
+  span {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: 15px;
+}
+
+header .popular-movie-slider .popular-movie-slider-content .movie-btns {
+  display: flex;
+  gap: 10px;
+}
+
+header .popular-movie-slider .popular-movie-slider-content .movie-btns button {
+  width: 200px;
+  border: none;
+  outline: none;
+  padding: 15px 0;
+  border-radius: 100px;
+  font-size: 1em;
+  background: #db0000;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+header
+  .popular-movie-slider
+  .popular-movie-slider-content
+  .movie-btns
+  button
+  .fa {
+  font-size: 0.65em;
+  color: #fff;
+}
+
+header
+  .popular-movie-slider
+  .popular-movie-slider-content
+  .movie-btns
+  .read-more {
+  background: none;
+}
+
+header
+  .popular-movie-slider
+  .popular-movie-slider-content
+  .movie-btns
+  .read-more:hover {
+  background: #000;
+}
+
+header
+  .popular-movie-slider
+  .popular-movie-slider-content
+  .movie-btns
+  button:hover {
+  background: #000;
+}
+
+section .filter-search-box {
+  background: #030b17;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  padding-top: 50px;
+  position: relative;
+}
+
+section .filter-search-box .filters-box {
+  display: flex;
+  gap: 50px;
+  color: #fff;
+}
+
+section .filter-search-box .filters-box .filters {
+  cursor: pointer;
+}
+
+section .filter-search-box .search-bar {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  width: 83%;
+  height: 2px;
+  background: #fff;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+section .filter-search-box .search-bar .bar {
+  width: 10%;
+  height: inherit;
+  background: #db0000;
+}
+
+section .filter-search-box .search-filters {
+  color: #fff;
+}
+
+section .filter-search-box .search-filters input {
+  border: none;
+  outline: none;
+  width: 200px;
+  padding: 5px 10px;
+  background: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+}
+
+section .movie-card-section {
+  background: #030b17;
+  padding: 20px 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 18px;
+  padding-top: 50px;
+}
+
+section .movie-card-section .card {
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.imm {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #000;
+}
+
+section .movie-card-section .card .card-content .movie-name {
+  font-weight: 700;
+  margin-top: 10px;
+  color: #db0000;
+  text-align: center;
+}
+
+section .movie-card-section .card .card-content .movie-info {
+  font-size: 0.95em;
+  margin-top: 10px;
+}
+
+section .movie-card-section .card .card-content .movie-info span {
+  color: #000000;
+}
+
+section .movie-card-section .card .card-content .movie-info .d3 {
+  background: #db0000;
+  border-radius: 50%;
+  font-size: 0.5em;
+  color: #000000;
+  padding: 3px;
+  margin-left: 3px;
+}
+
+section .show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  background: #030b17;
+  padding: 10px 100px;
+  padding-bottom: 40px;
+}
+
+section .show .show-bar {
+  background: #fff;
+  width: 100%;
+  height: 3px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+section .show .show-bar .bar {
+  width: 10%;
+  height: inherit;
+  background: #db0000;
+  border-radius: 50px;
+}
+
+section .show button {
+  border: none;
+  outline: none;
+  width: 250px;
+  padding: 15px 0;
+  font-size: 1em;
+  border-radius: 50px;
+  background: #db0000;
+  color: #fff;
+  cursor: pointer;
+}
+
+section .show button:hover {
+  background: #000;
+}
+
+/*---footer------*/
+footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 100px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+footer .logo-box {
+  font-size: 0.85em;
+}
+
+footer .logo-box .logo {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+footer .logo-box .logo span {
+  color: #db0000;
+}
+
+footer ul {
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer ul li {
+  cursor: pointer;
+  color: #888;
+}
+
+footer ul li:nth-child(1) {
+  color: #fff;
+}
+
+footer ul li:hover {
+  color: #fff;
+}
+
+/* footer .socail-box {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+} */
+
+footer .socail-box .fa {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+footer .socail-box .fa:hover {
+  background: #fff;
+  color: #db0000;
+}
+
+@media (min-width: 1024px) and (max-width: 1080px) {
+  section .movie-card-section {
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1023px) {
+  header nav ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    color: #fff;
+    background: #000;
+    width: 100%;
+    height: 100vh;
+    padding: 20px 30px;
+  }
+
+  header nav .fa {
+    cursor: pointer;
+    display: block;
+  }
+
+  header .popular-movie-slider {
+    padding: 10px 50px;
+  }
+
+  header .popular-movie-slider .poster {
+    width: 250px;
+    height: 300px;
+  }
+
+  section .movie-ticket-book {
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+  }
+
+  section .movie-ticket-book .choose-date .wrapper,
+  section .movie-ticket-book .choose-time .wrapper {
+    width: 30%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  section .movie-ticket-book .choose-date .carousel,
+  section .movie-ticket-book .choose-time .carousel {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  section .movie-ticket-book .choose-date .carousel .owl-nav,
+  section .movie-ticket-book .choose-time .carousel .owl-nav {
+    color: #db0000;
+    position: absolute;
+    width: 110%;
+    top: 50%;
+    left: -50%;
+    transform: translate(0%, -50%);
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section .movie-ticket-book .choose-date .wrapper .marker,
+  section .movie-ticket-book .choose-time .wrapper .marker {
+    width: 60px;
+    height: 2px;
+    background: #db0000;
+    position: absolute;
+    left: 45%;
+    transform: translate(-50%, 0);
+  }
+
+  section .movie-ticket-book button {
+    width: 20%;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  section .filter-search-box {
+    padding: 20px 50px;
+  }
+
+  section .filter-search-box .filters-box {
+    gap: 10px;
+  }
+
+  section .filter-search-box .search-bar {
+    left: 50px;
+    width: 85%;
+  }
+
+  section .movie-card-section {
+    padding: 20px 50px;
+    grid-template-columns: auto auto auto;
+  }
+
+  section .movie-card-section .card img {
+    width: 100%;
+    height: 300px;
+  }
+
+  section .show {
+    padding: 10px 50px;
+    padding-bottom: 40px;
+  }
+
+  footer {
+    padding: 40px 50px;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 719px) {
+  header {
+    height: auto;
+    padding-bottom: 30px;
+  }
+  header nav {
+    padding: 10px 20px;
+  }
+
+  header nav ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    color: #fff;
+    background: #000;
+    width: 100%;
+    height: 100vh;
+    padding: 20px 30px;
+  }
+
+  header nav .fa {
+    cursor: pointer;
+    display: block;
+  }
+
+  header .popular-movie-slider {
+    padding: 10px 20px;
+    display: block;
+  }
+
+  header .popular-movie-slider .poster {
+    width: 80%;
+    height: 330px;
+    margin-bottom: 20px;
+  }
+
+  section .movie-ticket-book {
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  section .filter-search-box {
+    padding: 20px 20px;
+  }
+
+  section .filter-search-box .filters-box {
+    gap: 10px;
+  }
+
+  section .filter-search-box .search-bar {
+    left: 20px;
+    width: 90%;
+  }
+
+  section .movie-card-section {
+    padding: 20px 20px;
+    grid-template-columns: auto auto;
+  }
+
+  section .movie-card-section .card img {
+    width: 100%;
+    height: 300px;
+  }
+
+  section .show {
+    padding: 10px 20px;
+    padding-bottom: 40px;
+  }
+
+  footer {
+    padding: 40px 20px;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 0.85em;
+  }
+
+  section .filter-search-box {
+    gap: 20px;
+    overflow-x: scroll;
+  }
+
+  section .filter-search-box::-webkit-scrollbar {
+    display: none;
+  }
+
+  section .filter-search-box .search-filters input {
+    width: 50px;
+    padding: 5px 10px;
+  }
+
+  section .movie-ticket-book {
+    padding: 30px 0px;
+  }
+
+  section .movie-ticket-book button {
+    margin-top: 10px;
+  }
+}
+.eptitle {
+  text-align: center;
+}
+.mainBut {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+}
+@media screen and (min-width: 900px) {
+  .eptitle {
+    position: relative;
+    top: 10%;
+    right: 8%;
+  }
+  .button1 {
+    position: relative;
+    top: 20%;
+  }
+  .mainBut {
+    position: relative;
+    left: 10%;
+    max-width: 90%;
+  }
+}
+.button1 {
+  margin-left: 90px;
+  margin: 30px;
+  background: none;
+  color: #fd8b34;
+  border: 2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: color 0.25s;
+  border-color: 0.25s;
+  box-shadow: 0.25s;
+  transform: 0.25s;
+  align-items: center;
+  width: 230px;
+}
+.button1:hover {
+  border-color: #d38ff8;
+  color: white;
+  box-shadow: 0 0, 5em 0.5em -0.4em #d38ff8;
+  transform: translate Y(-0.25em);
+  cursor: pointer;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+.mainContainer1 {
+  display: flex;
+  border: 1px solid #021f4f;
+  min-width: 500px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(3, 11, 65);
+  box-shadow: 0px -10px 90px rgb(11, 28, 138);
+  border-radius: 15px;
+ height: 100%;
+}
+.container1 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inpu {
+  max-width: 300px;
+  min-width: 300px;
+  margin: 7px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 1, 0.716);
+  box-shadow: 0px -10px 90px rgb(11, 28, 138);
+  height: 40px;
+  border-radius: 50px;
+  color: #fff;
+}
+.AddH {
+  color: #fff;
+  margin-top: 15px;
+}
+.button2 {
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgb(3, 11, 65);
+  box-shadow: 5px 2px 50px #1b6aea;
+  color: #fff;
+}
